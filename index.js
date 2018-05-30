@@ -44,7 +44,7 @@ httpServer.route({
         });
 
         // Define response
-        var responseData = [];
+        var responseData = {};
 
         // Send requests
         return axios.all(requestsCollection).then(
@@ -53,9 +53,7 @@ httpServer.route({
 
                 args.forEach((currentResponse) => {
                     if (currentResponse.status === 200 && currentResponse.data !== undefined) {
-                        responseData.push({
-                            [currentResponse.config.headers["X-Custom-Request-Name"] || `response_${++counter}`]: currentResponse.data
-                        });
+                        responseData[currentResponse.config.headers["X-Custom-Request-Name"] || `response_${++counter}`] = currentResponse.data;
                     }
                 });
             })
@@ -63,7 +61,7 @@ httpServer.route({
             return {
                 "statusCode": 200,
                 "message": "OK",
-                "data": JSON.stringify(responseData)
+                "data": responseData
             };
         }).catch((error) => {
             boom.badImplementation("Exception while parsing responses from proxies");
