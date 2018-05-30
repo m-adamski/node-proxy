@@ -5,5 +5,16 @@
     },
     "proxy": [
         // https://github.com/axios/axios#request-config
+        {
+            "name": "sample_name",
+            "request": {
+                "method": "GET",
+                "url": "https://example.com/api/user",
+                "auth": {
+                    "username": "username",
+                    "password": "password"
+                }
+            }
+        }
     ]
 }

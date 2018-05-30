@@ -7,6 +7,11 @@
     "author": "Maciej Adamski <m.adamski@ideacode.pl>",
     "license": "MIT",
     "private": false,
+    "scripts": {
+        "forever-list": "forever list",
+        "forever-start": "forever start index.js",
+        "forever-stop": "forever stop index.js"
+    },
     "dependencies": {
         "axios": "^0.18.0",
         "boom": "^7.2.0",
