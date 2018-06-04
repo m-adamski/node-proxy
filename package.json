@@ -2,7 +2,7 @@
     "name": "node-proxy",
     "version": "1.0.0",
     "description": "Application to collect and merge responses from provided servers",
-    "main": "source/index.js",
+    "main": "index.js",
     "repository": "git@github.com:m-adamski/node-proxy.git",
     "author": "Maciej Adamski <m.adamski@ideacode.pl>",
     "license": "MIT",

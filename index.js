@@ -16,10 +16,7 @@ let defaultConfig = { "server": { "host": "localhost", "port": 3000 }, "proxy": 
 let config = { ...defaultConfig, ...userConfig };
 
 // Define instance of Hapi HTTP Server
-const httpServer = hapi.server({
-    host: config.server.host,
-    port: config.server.port
-});
+const httpServer = hapi.server(config.server);
 
 // Define route
 httpServer.route({
